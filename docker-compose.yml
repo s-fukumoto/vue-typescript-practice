@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  app:
+    image: vue-ts-app
+    build:
+      context: .
+    container_name: vue-ts-app
+    tty: true
+    ports:
+      - 8080:8080
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    #command: npm dev
