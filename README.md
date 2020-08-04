@@ -3,7 +3,8 @@ vue-typescript-practice
 
 ---
 ## 概要
-VueでTypescriptを導入するための練習  
+Vue で Typescript を導入するための練習  
+vue-class-component のクラススタイルでなく Vue.extend での実装とする  
 
 ---
 ## 環境
