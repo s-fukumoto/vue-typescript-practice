@@ -42,18 +42,22 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent, reactive, toRefs } from "@vue/composition-api";
 
-export default Vue.extend({
-  data: () => ({
+export default defineComponent({
+  setup() {
     // prettier-ignore
-    cars: [
-      { id: 1, brand: "TOYOTA", name: "PRIUS Aプレミアム", color: "red", image: "/images/cars/04.svg" },
-      { id: 2, brand: "NISSAN", name: "NOTE e-POWER X Vセレクション", color: "yellow", image: "/images/cars/01.svg" },
-      { id: 3, brand: "HONDA", name: "CR-V e:HEV EX", color: "white", image: "/images/cars/00.svg" },
-      { id: 4, brand: "MAZDA", name: "MAZDA 3 FASTBACK", color: "red", image: "/images/cars/11.svg" },
-      { id: 5, brand: "SUBARU", name: "IMPREZA 2.0i-L EyeSight", color: "light-blue", image: "/images/cars/06.svg" },
-    ]
-  })
+    const store = reactive({
+      cars: [
+        { id: 1, brand: "TOYOTA", name: "PRIUS Aプレミアム", color: "red", image: "/images/cars/04.svg" },
+        { id: 2, brand: "NISSAN", name: "NOTE e-POWER X Vセレクション", color: "yellow", image: "/images/cars/01.svg" },
+        { id: 3, brand: "HONDA", name: "CR-V e:HEV EX", color: "white", image: "/images/cars/00.svg" },
+        { id: 4, brand: "MAZDA", name: "MAZDA 3 FASTBACK", color: "red", image: "/images/cars/11.svg" },
+        { id: 5, brand: "SUBARU", name: "IMPREZA 2.0i-L EyeSight", color: "light-blue", image: "/images/cars/06.svg" },
+      ]
+    });
+
+    return toRefs(store);
+  },
 });
 </script>

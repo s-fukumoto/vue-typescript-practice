@@ -34,21 +34,25 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent, reactive, toRefs } from "@vue/composition-api";
 import AnimationIcon from "@/components/AnimationIcon.vue";
 
-export default Vue.extend({
+export default defineComponent({
   name: "AppToolBar",
   components: {
-    AnimationIcon
+    AnimationIcon,
   },
-  data: () => ({
-    drawer: null, // 開閉On/Off
-    navItems: [
-      { title: "Home", icon: "mdi-home", path: "/" },
-      { title: "Car", icon: "mdi-car", path: "/car/" },
-      { title: "About", icon: "mdi-help-box", path: "/about/" }
-    ]
-  })
+  setup() {
+    const store = reactive({
+      drawer: null, // 開閉On/Off
+      navItems: [
+        { title: "Home", icon: "mdi-home", path: "/" },
+        { title: "Car", icon: "mdi-car", path: "/car/" },
+        { title: "About", icon: "mdi-help-box", path: "/about/" },
+      ],
+    });
+
+    return toRefs(store);
+  },
 });
 </script>

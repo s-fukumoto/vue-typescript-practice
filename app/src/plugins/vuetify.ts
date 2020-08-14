@@ -31,19 +31,19 @@ const vuetify = new Vuetify({
     */
     themes: {
       light: {
-        primary: colors.green.darken2
+        primary: colors.green.darken2,
       },
       dark: {
-        primary: colors.lightGreen.darken1
-      }
-    }
+        primary: colors.lightGreen.darken1,
+      },
+    },
   },
   icons: {
-    iconfont: "mdi"
+    iconfont: "mdi",
   },
   lang: {
-    current: "ja"
-  }
+    current: "ja",
+  },
 });
 
 export default vuetify;
