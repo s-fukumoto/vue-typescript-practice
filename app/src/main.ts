@@ -3,11 +3,15 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import vuetify from "./plugins/vuetify";
-import * as MyComponents from "./plugins/my-components";
+import VueCompositionAPI from "@vue/composition-api";
+import MyComponents from "./plugins/my-components";
 
 Vue.config.productionTip = false;
 
-// Myコンポーネントをグローバルコンポーネントとして登録するプラグイン
+// Composition API
+Vue.use(VueCompositionAPI);
+
+// Myコンポーネントをグローバルコンポーネントとして登録
 Vue.use(MyComponents);
 
 new Vue({

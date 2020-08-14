@@ -8,10 +8,10 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "@vue/composition-api";
 import AppToolBar from "@/components/AppToolBar.vue";
 
-export default Vue.extend({
+export default defineComponent({
   name: "App",
   components: {
     AppToolBar

@@ -12,16 +12,20 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent, reactive, toRefs } from "@vue/composition-api";
 
-export default Vue.extend({
+export default defineComponent({
   name: "AnimationIcon",
-  data: () => ({
-    icons: ["mdi-human-handsup", "mdi-human", "mdi-human-handsdown"],
-    height: 36,
-    width: 36,
-    color: "rgba(0, 0, 0, 0.0)"
-  })
+  setup() {
+    const store = reactive({
+      icons: ["mdi-human-handsup", "mdi-human", "mdi-human-handsdown"],
+      height: 36,
+      width: 36,
+      color: "rgba(0, 0, 0, 0.0)"
+    });
+
+    return toRefs(store);
+  }
 });
 </script>
 
