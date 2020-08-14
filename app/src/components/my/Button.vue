@@ -20,8 +20,8 @@ export default defineComponent({
     return {
       attrs,
       listeners,
-      color
+      color,
     };
-  }
+  },
 });
 </script>

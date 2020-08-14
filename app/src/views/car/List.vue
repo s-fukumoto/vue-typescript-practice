@@ -58,6 +58,6 @@ export default defineComponent({
     });
 
     return toRefs(store);
-  }
+  },
 });
 </script>

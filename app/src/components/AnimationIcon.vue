@@ -21,11 +21,11 @@ export default defineComponent({
       icons: ["mdi-human-handsup", "mdi-human", "mdi-human-handsdown"],
       height: 36,
       width: 36,
-      color: "rgba(0, 0, 0, 0.0)"
+      color: "rgba(0, 0, 0, 0.0)",
     });
 
     return toRefs(store);
-  }
+  },
 });
 </script>
 

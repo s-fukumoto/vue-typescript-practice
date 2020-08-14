@@ -16,8 +16,8 @@ export default defineComponent({
   inheritAttrs: false,
   setup(props, { attrs }) {
     return {
-      attrs
+      attrs,
     };
-  }
+  },
 });
 </script>

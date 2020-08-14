@@ -40,7 +40,7 @@ import AnimationIcon from "@/components/AnimationIcon.vue";
 export default defineComponent({
   name: "AppToolBar",
   components: {
-    AnimationIcon
+    AnimationIcon,
   },
   setup() {
     const store = reactive({
@@ -48,11 +48,11 @@ export default defineComponent({
       navItems: [
         { title: "Home", icon: "mdi-home", path: "/" },
         { title: "Car", icon: "mdi-car", path: "/car/" },
-        { title: "About", icon: "mdi-help-box", path: "/about/" }
-      ]
+        { title: "About", icon: "mdi-help-box", path: "/about/" },
+      ],
     });
 
     return toRefs(store);
-  }
+  },
 });
 </script>

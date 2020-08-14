@@ -83,7 +83,7 @@ import AnimationIcon from "@/components/AnimationIcon.vue";
 export default defineComponent({
   name: "HelloWorld",
   components: {
-    AnimationIcon
+    AnimationIcon,
   },
   setup() {
     // prettier-ignore
@@ -141,6 +141,6 @@ export default defineComponent({
     });
 
     return toRefs(store);
-  }
+  },
 });
 </script>

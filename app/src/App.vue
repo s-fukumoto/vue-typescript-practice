@@ -14,7 +14,7 @@ import AppToolBar from "@/components/AppToolBar.vue";
 export default defineComponent({
   name: "App",
   components: {
-    AppToolBar
-  }
+    AppToolBar,
+  },
 });
 </script>

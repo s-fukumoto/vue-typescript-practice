@@ -12,7 +12,7 @@ export default function install(Vue: VueConstructor): void {
   );
 
   // コンポーネントをグローバル登録する
-  requireContext.keys().forEach(fileName => {
+  requireContext.keys().forEach((fileName) => {
     const component = requireContext(fileName).default;
     Vue.component(component.name, component);
   });
