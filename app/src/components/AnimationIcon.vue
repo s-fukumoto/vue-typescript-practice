@@ -1,5 +1,10 @@
 <template>
-  <v-sheet :height="height" :width="width" :color="color" class="relative">
+  <v-sheet
+    :height="size.height"
+    :width="size.width"
+    :color="color"
+    class="relative"
+  >
     <v-icon
       v-for="(icon, index) in icons"
       :key="icon.id"
@@ -12,19 +17,28 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from "@vue/composition-api";
+import { defineComponent, ref, reactive } from "@vue/composition-api";
+
+interface IconSize {
+  height: number;
+  width: number;
+}
 
 export default defineComponent({
   name: "AnimationIcon",
-  setup() {
-    const store = reactive({
-      icons: ["mdi-human-handsup", "mdi-human", "mdi-human-handsdown"],
-      height: 36,
-      width: 36,
-      color: "rgba(0, 0, 0, 0.0)",
-    });
 
-    return toRefs(store);
+  setup() {
+    // prettier-ignore
+    const icons = ref<string[]>(["mdi-human-handsup", "mdi-human", "mdi-human-handsdown"]);
+    // prettier-ignore
+    const size = reactive<IconSize>({ height: 36, width: 36 });
+    const color = ref<string>("rgba(0, 0, 0, 0.0)");
+
+    return {
+      icons,
+      size,
+      color,
+    };
   },
 });
 </script>

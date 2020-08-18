@@ -34,7 +34,7 @@ const vuetify = new Vuetify({
         primary: colors.green.darken2,
       },
       dark: {
-        primary: colors.lightGreen.darken1,
+        primary: colors.lightGreen.darken2,
       },
     },
   },

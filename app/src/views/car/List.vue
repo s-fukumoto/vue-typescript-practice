@@ -2,7 +2,7 @@
   <v-container>
     <v-row justify="center">
       <v-col md="10" lg="8">
-        <v-virtual-scroll :items="cars" bench="10" item-height="80">
+        <v-virtual-scroll :items="car.items" bench="10" item-height="80">
           <template v-slot="{ index, item }">
             <v-divider v-if="index > 0" />
 
@@ -22,7 +22,7 @@
               </v-list-item-content>
 
               <v-list-item-action>
-                <v-btn icon small>
+                <v-btn icon small @click="$router.push('/car/form/')">
                   <v-icon color="primary">
                     mdi-pencil-outline
                   </v-icon>
@@ -42,13 +42,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from "@vue/composition-api";
+import { defineComponent, reactive } from "@vue/composition-api";
+import { Car } from "@/types/car";
 
 export default defineComponent({
   setup() {
     // prettier-ignore
-    const store = reactive({
-      cars: [
+    const car = reactive<Car>({
+      items: [
         { id: 1, brand: "TOYOTA", name: "PRIUS Aプレミアム", color: "red", image: "/images/cars/04.svg" },
         { id: 2, brand: "NISSAN", name: "NOTE e-POWER X Vセレクション", color: "yellow", image: "/images/cars/01.svg" },
         { id: 3, brand: "HONDA", name: "CR-V e:HEV EX", color: "white", image: "/images/cars/00.svg" },
@@ -57,7 +58,9 @@ export default defineComponent({
       ]
     });
 
-    return toRefs(store);
+    return {
+      car,
+    };
   },
 });
 </script>

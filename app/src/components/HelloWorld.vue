@@ -85,9 +85,10 @@ export default defineComponent({
   components: {
     AnimationIcon,
   },
+
   setup() {
     // prettier-ignore
-    const store = reactive({
+    const contents = reactive({
       ecosystem: [
         {
           text: "vuetify-loader",
@@ -140,7 +141,7 @@ export default defineComponent({
       ]
     });
 
-    return toRefs(store);
+    return toRefs(contents);
   },
 });
 </script>
