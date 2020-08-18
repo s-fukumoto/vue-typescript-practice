@@ -4,7 +4,7 @@
       <v-list>
         <v-list-item-group color="light-green">
           <v-list-item
-            v-for="item in navItems"
+            v-for="item in nav.items"
             :key="item.title"
             :to="item.path"
             router
@@ -34,25 +34,33 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from "@vue/composition-api";
+import { defineComponent, ref, reactive } from "@vue/composition-api";
 import AnimationIcon from "@/components/AnimationIcon.vue";
+import { Navigation } from "@/types/app";
 
 export default defineComponent({
   name: "AppToolBar",
   components: {
     AnimationIcon,
   },
+
   setup() {
-    const store = reactive({
-      drawer: null, // 開閉On/Off
-      navItems: [
+    // ナビゲーション項目
+    // prettier-ignore
+    const nav = reactive<Navigation>({
+      items: [
         { title: "Home", icon: "mdi-home", path: "/" },
         { title: "Car", icon: "mdi-car", path: "/car/" },
         { title: "About", icon: "mdi-help-box", path: "/about/" },
-      ],
+      ]
     });
+    // 開閉On/Off
+    const drawer = ref<boolean | undefined>(undefined);
 
-    return toRefs(store);
+    return {
+      nav,
+      drawer,
+    };
   },
 });
 </script>
