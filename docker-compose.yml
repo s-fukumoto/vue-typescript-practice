@@ -10,5 +10,6 @@ services:
       - 8080:8080
     volumes:
       - ./app:/app
+      - ./docs:/docs
     working_dir: /app
-    #command: npm dev
+    #command: npm run serve
