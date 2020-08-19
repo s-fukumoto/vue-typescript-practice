@@ -3,12 +3,15 @@ vue-typescript-practice
 
 ---
 ## 概要
-VueでTypescriptを導入するための練習  
+Vue で Typescript を導入するための練習  
+Composition API での実装とする  
 
 ---
 ## 環境
 * vue.js
 * typescript
+* veutify
+* @vue/composition-api
 
 ---
 ## project作成時めも
