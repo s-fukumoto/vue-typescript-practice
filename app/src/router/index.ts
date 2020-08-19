@@ -5,6 +5,9 @@ Vue.use(VueRouter);
 
 const mode: RouterMode = "history";
 
+// productionをGitHubPages用にベースを変更しているためrouterでも指定
+const base = process.env.BASE_URL;
+
 const routes: Array<RouteConfig> = [
   {
     path: "/",
@@ -39,6 +42,7 @@ const routes: Array<RouteConfig> = [
 
 const router = new VueRouter({
   mode,
+  base,
   routes,
 });
 
