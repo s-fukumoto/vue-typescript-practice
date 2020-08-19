@@ -1,7 +1,8 @@
 module.exports = {
   transpileDependencies: ["vuetify"],
   productionSourceMap: process.env.NODE_ENV === "production" ? false : true,
-  // GitHubPages用に以下変更
-  publicPath: "/vue-typescript-practice",
-  outputDir: "/docs",
+  // productionをGitHubPages用に以下変更
+  publicPath:
+    process.env.NODE_ENV === "production" ? "/vue-typescript-practice" : "/",
+  outputDir: process.env.NODE_ENV === "production" ? "/docs" : "dist",
 };
