@@ -1,4 +1,4 @@
-# app
+# Vue Typescript Practice
 
 ## Project setup
 ```
@@ -10,14 +10,24 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compiles and minifies for development
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### Compiles and minifies for production
+```
+npm run build:prod
+```
+
+### Lints
 ```
 npm run lint
+```
+
+### Lints and fixes files
+```
+npm run lint:fix
 ```
 
 ### Customize configuration
